@@ -1,0 +1,149 @@
+/* Topbar.css */
+
+/* Container */
+.topbarContainer {
+    background: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    padding: 0 10px;
+}
+
+/* Logo */
+.logo {
+    color: white;
+    font-weight: 1000;
+}
+
+/* Searchbar */
+.searchbar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 14px;
+    padding: 5px;
+}
+
+.searchbar input {
+    flex: 1;
+    border: none;
+    outline: none;
+}
+
+/* Homepage-timeline */
+.Homepage-timeline {
+    display: flex;
+    gap: 28px;
+}
+
+/* Topbar Icons */
+.topbarIcons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Topbar Image */
+.classTopbarImg {
+    height: 23px;
+    width: 25px;
+    border-radius: 9px;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .topbarContainer {
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .topbarRight {
+        margin-top: 10px;
+    }
+
+    .topbarIcons {
+        font-size: 0.8rem;
+    }
+
+    .classTopbarImg {
+        height: 20px;
+        width: 22px;
+    }
+}
+/* .topbarContainer {
+    justify-content: space-between;
+    background: blue;
+    display: flex;
+    height: 48px;
+    padding-right: 7px;
+}
+.logo {
+    color: white;
+    font-weight: 1000;
+}
+.svgclass {
+    display: flex;
+    align-items: center;
+}
+.searchbar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 14px;
+}
+.searchInput {
+    /* border: none; */
+    width: 415px;
+    /* border: none;
+    width: 505px; */
+}
+.inputStyle {
+    width: 360px;
+    border: none;
+}
+.inputStyle:focus {
+    outline: none; /* Remove default focus outline */
+    /* Add any additional styles for focus state */
+  }
+.classTopbarImg {
+    height: 23px;
+    width: 25px;
+    border-radius: 9px;
+}
+.Homepage-timeline {
+    left: -197px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* display: flex; */
+    gap: 28px;
+}
+
+.topbarCenter{
+    display: flex;
+    align-items: center;
+}
+.topbarRight {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+.topbarLeft {
+    display: flex;
+    align-items: center;
+    padding-left: 26px;
+}
+.topbarCenter {
+    display: flex;
+}
+.searchbar {
+    display: flex;
+    gap: 9px;
+}
+
+
+
+ */
