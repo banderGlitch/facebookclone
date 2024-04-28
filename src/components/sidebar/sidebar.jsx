@@ -8,15 +8,6 @@ import img2 from '/assets/person/2.jpeg';
 export default function Sidebar() {
 
 
-    // const imgSrc = img2; // Assuming img2 is your image source
-
-    // // Repeat the UI structure 20 times
-    // const friendItems = Array.from({ length: 20 }, (_, index) => (
-    //     <li className='sidebarFriend' key={index}>
-    //         <img className='sidebarfriendImg' src={imgSrc} alt='' />
-    //         <span className='sidebafriendName'>Jane Doe</span> {/* Assuming static name */}
-    //     </li>
-    // ));
 
 
     return (
@@ -67,7 +58,6 @@ export default function Sidebar() {
                     <hr />
                 </div>
                 <ul className='sidebarFriendList'>
-                {/* {friendItems} */}
                     <li className='sidebarFriend'>
                         <img className='sidebarfriendImg' src={img2} alt='' />
                         <span className='sidebafriendName'>Jane Doe</span>
