@@ -3,6 +3,7 @@
     padding: 15px;
     background-color: snow;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
 }
 .shareWrapper {
 

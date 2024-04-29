@@ -1,3 +1,55 @@
 .rightbar{
     flex: 1;
 }
+.rightbarWrapper {
+    padding-top: 26px;
+
+}
+.birthdayContainer {
+    gap: 26px;
+    display: flex;
+    align-items: center;
+
+}
+.birthdayImg {
+    height: 26px;
+
+}
+.birthdayText {
+
+}
+
+.rightbarAd {
+    padding-top: 21px;
+    border-radius: 45px;
+
+
+}
+
+.rightbarTitle {
+
+}
+
+.rightbarFriendList {
+    list-style: none;
+
+}
+
+.rightbarFriend {
+    display: flex;
+    gap: 30px;
+  
+
+}
+
+.rightbarProfileImgContainer {
+
+}
+
+.rightbarProfileImg {
+
+    height: 26px;
+}
+.rightbarUsername {
+
+}
