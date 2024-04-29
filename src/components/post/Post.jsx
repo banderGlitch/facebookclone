@@ -1,18 +1,32 @@
 import './Post.css'
 import img1 from '../../../public/assets/person/1.jpeg'
-import img2 from '../../../public/assets/person/2.jpeg';
 import Like from '../../../public/assets/like.png';
 import Heart from '../../../public/assets/heart.png';
 import { MoreVert } from "@mui/icons-material";
-export default function Post() {
+import { Users } from '../../dummydata';
+
+console.log("Users-->", Users)
+export default function Post({post}) {
+
+    const fetchUserName = (id) => {
+        const user = Users.filter(u => u.id === id)[0].username
+        return user
+        
+    }
+
+    const fetchUseProfilePic = (id) => {
+        const profilePic = Users.filter(u => u.id === id)[0].profilePicture
+        return profilePic
+    }
+
     return (
         <div className='post'>
             <div className="postWrapper">
                 <div className="postTop">
                     <div className="postTopLeft">
-                        <img className='postProfile' src={img1} alt='Not found'/>
-                        <span className="postUsern">Nernay Kumar</span>
-                        <span className="postDate">5 mins ago</span>
+                        <img className='postProfile' src={`../../../public/${fetchUseProfilePic(post.id)}`} alt='Not found'/>
+                        <span className="postUsern">{fetchUserName(post.id)}</span>
+                        <span className="postDate">{post?.date}</span>
                     </div>
                     <div className="postTopRight">
                         <MoreVert/>
@@ -20,17 +34,17 @@ export default function Post() {
                 </div>
                 <div className="postCenter">
                     <span className='postText'>Hey! Its my first post:</span>
-                    <img className='postImg' src={img2} alt='Not Found'/>
+                    <img className='postImg' src={`../../../public/${post?.photo}`} alt='Not Found'/>
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
                         <img className='likeIcon' src={Like} alt='Not Found'/>
                         <img className='heartIcon' src={Heart} alt='Not Found'/>
-                        <span className='likeCounter'>32 people liked it</span>
+                        <span className='likeCounter'>{`${post?.like} Likes`}</span>
                     </div>
                     <div className='postBottomRight'>
                         <span className="postcommentText">
-                            9 Comments
+                            {`${post?.comment} comments`}
                         </span>
 
                     </div>
