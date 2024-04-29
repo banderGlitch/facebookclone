@@ -3,6 +3,9 @@
     flex: 0.5;
     height:  calc(100vh - 60px);
     overflow-y: scroll;
+    position: sticky;
+    top: 0px
+
 
 }
 

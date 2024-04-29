@@ -3,6 +3,8 @@ import './rightbar.css'
 import birthday from '../../../public/assets/gift.png';
 import ads from '../../../public/assets/ad.png'
 import img3 from '../../../public/assets/person/3.jpeg'
+import Online from '../Online/online';
+import { Users } from '../../dummydata';
 export default function Rightbar() {
   return (
     <div className='rightbar'>
@@ -15,66 +17,9 @@ export default function Rightbar() {
         </div>
         <img className='rightbarAd' src={ads} alt='NotFound'/>
         <h4 className='rightbarTitle'>Online Friend</h4>
-        <ul className='rightbarFriendList'>
-          <li className='rightbarFriend'>
-            <div className="rightbarProfileImgContainer">
-              <img className='rightbarProfileImg' src={img3} alt='Not Found'/>
-            </div>
-            <span className='rightbarUsername'>John Doe</span>
-          </li>
-          <span className="spanrightUserOnline"></span>
-
-        </ul>
-        <ul className='rightbarFriendList'>
-          <li className='rightbarFriend'>
-            <div className="rightbarProfileImgContainer">
-              <img className='rightbarProfileImg' src={img3} alt='Not Found'/>
-            </div>
-            <span className='rightbarUsername'>John Doe</span>
-          </li>
-          <span className="spanrightUserOnline"></span>
-
-        </ul>
-        <ul className='rightbarFriendList'>
-          <li className='rightbarFriend'>
-            <div className="rightbarProfileImgContainer">
-              <img className='rightbarProfileImg' src={img3} alt='Not Found'/>
-            </div>
-            <span className='rightbarUsername'>John Doe</span>
-          </li>
-          <span className="spanrightUserOnline"></span>
-
-        </ul>
-        <ul className='rightbarFriendList'>
-          <li className='rightbarFriend'>
-            <div className="rightbarProfileImgContainer">
-              <img className='rightbarProfileImg' src={img3} alt='Not Found'/>
-            </div>
-            <span className='rightbarUsername'>John Doe</span>
-          </li>
-          <span className="spanrightUserOnline"></span>
-
-        </ul>
-        <ul className='rightbarFriendList'>
-          <li className='rightbarFriend'>
-            <div className="rightbarProfileImgContainer">
-              <img className='rightbarProfileImg' src={img3} alt='Not Found'/>
-            </div>
-            <span className='rightbarUsername'>John Doe</span>
-          </li>
-          <span className="spanrightUserOnline"></span>
-
-        </ul>
-        <ul className='rightbarFriendList'>
-          <li className='rightbarFriend'>
-            <div className="rightbarProfileImgContainer">
-              <img className='rightbarProfileImg' src={img3} alt='Not Found'/>
-            </div>
-            <span className='rightbarUsername'>John Doe</span>
-          </li>
-          <span className="spanrightUserOnline"></span>
-
-        </ul>
+        {Users.map( u => (
+          <Online key={u.id} user={u}/>
+        ))}
       </div>
     </div>
   )

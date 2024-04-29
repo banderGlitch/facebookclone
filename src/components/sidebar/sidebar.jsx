@@ -3,11 +3,12 @@ import './sidebar.css';
 import { RssFeed, Chat, PlayCircleFilledOutlined, Group, Bookmark, HelpOutline, WorkOutline, Event, School, }
     from "@mui/icons-material";
 import img2 from '/assets/person/2.jpeg';
+import { Users } from '../../dummydata';
+import CloseFriend from '../closeFriend/closeFriend';
+
 
 
 export default function Sidebar() {
-
-
 
 
     return (
@@ -58,7 +59,11 @@ export default function Sidebar() {
                     <hr />
                 </div>
                 <ul className='sidebarFriendList'>
-                    <li className='sidebarFriend'>
+                    {Users.map(u => (
+                        <CloseFriend key = {u.id} user = {u}/>
+                    ))}
+                    {/* < CloseFriend /> */}
+                    {/* <li className='sidebarFriend'>
                         <img className='sidebarfriendImg' src={img2} alt='' />
                         <span className='sidebafriendName'>Jane Doe</span>
                     </li>
@@ -73,7 +78,7 @@ export default function Sidebar() {
                     <li className='sidebarFriend'>
                         <img className='sidebarfriendImg' src={img2} alt='' />
                         <span className='sidebafriendName'>Jane Doe</span>
-                    </li>
+                    </li> */}
 
 
                 </ul>
