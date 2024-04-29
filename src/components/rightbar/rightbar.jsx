@@ -22,6 +22,57 @@ export default function Rightbar() {
             </div>
             <span className='rightbarUsername'>John Doe</span>
           </li>
+          <span className="spanrightUserOnline"></span>
+
+        </ul>
+        <ul className='rightbarFriendList'>
+          <li className='rightbarFriend'>
+            <div className="rightbarProfileImgContainer">
+              <img className='rightbarProfileImg' src={img3} alt='Not Found'/>
+            </div>
+            <span className='rightbarUsername'>John Doe</span>
+          </li>
+          <span className="spanrightUserOnline"></span>
+
+        </ul>
+        <ul className='rightbarFriendList'>
+          <li className='rightbarFriend'>
+            <div className="rightbarProfileImgContainer">
+              <img className='rightbarProfileImg' src={img3} alt='Not Found'/>
+            </div>
+            <span className='rightbarUsername'>John Doe</span>
+          </li>
+          <span className="spanrightUserOnline"></span>
+
+        </ul>
+        <ul className='rightbarFriendList'>
+          <li className='rightbarFriend'>
+            <div className="rightbarProfileImgContainer">
+              <img className='rightbarProfileImg' src={img3} alt='Not Found'/>
+            </div>
+            <span className='rightbarUsername'>John Doe</span>
+          </li>
+          <span className="spanrightUserOnline"></span>
+
+        </ul>
+        <ul className='rightbarFriendList'>
+          <li className='rightbarFriend'>
+            <div className="rightbarProfileImgContainer">
+              <img className='rightbarProfileImg' src={img3} alt='Not Found'/>
+            </div>
+            <span className='rightbarUsername'>John Doe</span>
+          </li>
+          <span className="spanrightUserOnline"></span>
+
+        </ul>
+        <ul className='rightbarFriendList'>
+          <li className='rightbarFriend'>
+            <div className="rightbarProfileImgContainer">
+              <img className='rightbarProfileImg' src={img3} alt='Not Found'/>
+            </div>
+            <span className='rightbarUsername'>John Doe</span>
+          </li>
+          <span className="spanrightUserOnline"></span>
 
         </ul>
       </div>
