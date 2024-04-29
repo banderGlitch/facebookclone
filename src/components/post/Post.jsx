@@ -1,4 +1,5 @@
 import './Post.css'
+import { useState } from 'react';
 import img1 from '../../../public/assets/person/1.jpeg'
 import Like from '../../../public/assets/like.png';
 import Heart from '../../../public/assets/heart.png';
@@ -8,6 +9,14 @@ import { Users } from '../../dummydata';
 console.log("Users-->", Users)
 export default function Post({post}) {
 
+    const [like, setLike] = useState(post?.like)
+    const [isLiked,  setIsLiked ] = useState(false)
+
+    const likeHandler = () => {
+        setLike(isLiked ? like-1 : like+1)
+        setIsLiked(!isLiked)
+    }
+ 
     const fetchUserName = (id) => {
         const user = Users.filter(u => u.id === id)[0].username
         return user
@@ -38,9 +47,9 @@ export default function Post({post}) {
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
-                        <img className='likeIcon' src={Like} alt='Not Found'/>
-                        <img className='heartIcon' src={Heart} alt='Not Found'/>
-                        <span className='likeCounter'>{`${post?.like} Likes`}</span>
+                        <img className='likeIcon' src={Like} onClick={likeHandler} alt='Not Found'/>
+                        <img className='heartIcon' src={Heart} onClick={likeHandler} alt='Not Found'/>
+                        <span className='likeCounter'>{`${like} Likes`}</span>
                     </div>
                     <div className='postBottomRight'>
                         <span className="postcommentText">
