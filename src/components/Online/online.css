@@ -59,7 +59,8 @@
 
 .spanrightUserOnline {
     position: relative;
-    right: 510px;
+    right: -32px;
+    bottom: 44px;
     width: 12px;
     height: 12px;
     border-radius: 50%;
