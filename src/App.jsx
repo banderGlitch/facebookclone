@@ -8,13 +8,10 @@ import Register from "./pages/Register/register"
 import CircularProgress from '@mui/material/CircularProgress';
 
 
-// Integrating a react-router-dom
-
-
 const ProtectedRoutes = () => {
-  const token = false
+  const token = true
   const isAuthenticated = token
-
+  
   if (isAuthenticated === false) {
     return <Navigate to='/' replace />
   }
@@ -34,23 +31,52 @@ const ProtectedRoutes = () => {
 
 }
 
+
+const Un_Protected_Routes = () => {
+  const token = false
+  const isAuthenticated = token
+  
+  if (isAuthenticated === true) {
+    return <Navigate to='/home' replace />
+  }
+
+  return !isAuthenticated ? (
+    <Suspense fallback={
+      <div className='loading-loader-section'>
+        <CircularProgress color='success' />
+      </div>
+    }>
+      <Outlet />
+    </Suspense>
+  ) : (
+    <Navigate to='/' replace />
+  )
+
+
+}
+
+
 function App() {
 
   return (
     <>
       <Router>
         <Routes>
-          <Route
-            path="/"
+          <Route element = {<Un_Protected_Routes/>}>
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+          </Route>
+          {/* <Route
+            path="/login"
             element={
               <>
                 <Suspense fallback={
-                  <div>
+                  <div className='loading-loader-section'>
                     <CircularProgress color="success" />
                   </div>
                 }
                 />
-                <Login />
+                <Login/>
               </>
             }
           />
@@ -59,30 +85,16 @@ function App() {
             element={
               <>
                 <Suspense fallback={
-                  <div>
+                  <div className='loading-loader-section'>
                     <CircularProgress color="success" />
                   </div>
                 }
                 />
-                <Register />
+                <Register/>
               </>
             }
-          />
-          <Route
-            path="/register"
-            element={
-              <>
-                <Suspense fallback={
-                  <div>
-                    <CircularProgress color="success" />
-                  </div>
-                }
-                />
-                <Register />
-              </>
-            }
-          />
-          <Route element={<ProtectedRoutes />}>
+          /> */}
+          <Route element={<ProtectedRoutes/>}>
             <Route path='/home' element={<Home />} />
             <Route path='/profile' element={<Profile />} />
           </Route>
@@ -91,7 +103,7 @@ function App() {
             element={
               <>
                 <Suspense fallback={
-                  <div>
+                  <div className='loading-loader-section'>
                     <CircularProgress color="success" />
                   </div>
                 }
@@ -102,10 +114,6 @@ function App() {
           />
         </Routes>
       </Router>
-      {/* <Register/> */}
-      {/* <Login/> */}
-      {/* <Home/> */}
-      {/* <Profile /> */}
     </>
   )
 }

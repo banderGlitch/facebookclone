@@ -5,12 +5,13 @@ import PersonIcon from '@mui/icons-material/Person';
 import MessageIcon from '@mui/icons-material/Message';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import img1 from '/assets/person/1.jpeg';
+import { Link } from 'react-router-dom';
 
 export default function Topbar() {
     return (
         <div className='topbarContainer'>
             <div className='topbarLeft'>
-                <span className='logo'>Facebook</span>
+                <Link to = "/home" className='logo' style={{textDecoration: "none"}}>Facebook</Link>
             </div>
             <div className='topbarCenter'>
                 <div className='searchbar'>

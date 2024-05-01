@@ -1,10 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Feed.css'
 import Share from '../share/Share'
 import Post from '../post/Post'
 import {Posts } from '../../dummydata';
 export default function Feed() {
-  console.log("Posts--------------->", Posts)
+
+  const [posts , setPosts ] = useState([]); 
+
+  useEffect(() => {
+    console.log("Feeds rendered")
+
+  },[])
   return (
     <div className='feed'>
         <Share/>
