@@ -46,8 +46,6 @@ export function apiPut(endPoint, data, headers = {}) {
 }
 
 export function setItem(key, value) {
-    console.log("key--->",key)
-    console.log("value---->", value)
     try {
         const jsonValue = JSON.stringify(value);
         localStorage.setItem(key, jsonValue);
