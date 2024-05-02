@@ -8,13 +8,6 @@ const AuthReducer = (state, action) => {
                 error : false
             };
 
-        // case "LOGIN_AUTHORIZED":
-        //     return {
-        //        user: action.payload,
-        //        isFetching: true,
-        //        error : false
-        //     }
-
         case "LOGIN_SUCCESS":
             return {
                 user : action.payload,

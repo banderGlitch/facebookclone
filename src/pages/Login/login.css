@@ -81,3 +81,11 @@
     font-weight: 500;
     cursor: pointer;
 }
+.WarningParagraph {
+    color: red;
+    text-align: center;
+}
+.WraningParagraphPassword {
+    color: red;
+    text-align: center;
+}

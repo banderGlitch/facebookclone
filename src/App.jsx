@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import React, { Suspense, useContext } from 'react';
 import Login from "./pages/Login/login"
 import Profile from "./pages/Profile/Profile"
@@ -8,13 +9,15 @@ import Register from "./pages/Register/register"
 import CircularProgress from '@mui/material/CircularProgress';
 import { AuthContext } from './context/AuthContext';
 
+
+
 const ProtectedRoutes = ({ user }) => {
   console.log("user ProtectRoutes--------------------->", user);
 
   const isAuthenticated = user && user.username && user.email;
 
   if (!isAuthenticated) {
-    return <Navigate to='/' replace />;
+    return <Navigate to='/login' replace />;
   }
 
   return (
@@ -81,6 +84,7 @@ function App() {
           />
         </Routes>
       </Router>
+      <Toaster position="top-right" />
     </>
   )
 }
