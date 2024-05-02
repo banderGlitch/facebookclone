@@ -55,6 +55,7 @@ export default function Login() {
                 placeholder="Email"
                 className="loginInput"
                 type="email"
+                value={formik.values.email}
                 onChange={formik.handleChange}
                 name="email"
               />
@@ -63,6 +64,7 @@ export default function Login() {
                 placeholder="Password"
                 className="loginInput"
                 type="password"
+                value={formik.values.password}
                 onChange={formik.handleChange}
                 name="password"
               />

@@ -17,8 +17,9 @@ export const loginCall = async (userCredential, dispatch) => {
             toast.success("User logged successfully");
         }
     } catch (err) {
+        console.log("err", err)
         dispatch({ type: "LOGIN_FAILURE", payload: err})
-        toast.error("Something went wrong!")
+        toast.error("Email or Password may not be correct")
         throw err
     }
 
