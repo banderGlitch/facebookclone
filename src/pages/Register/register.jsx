@@ -1,10 +1,14 @@
 import './register.css'
 import { useNavigate } from "react-router-dom";
+import { useContext, useRef, useEffect } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { AuthContext } from "../../context/AuthContext";
+import { registerCall } from '../../apiCalls';
 export default function Register() {
 
   const navigate = useNavigate();
+  const { isFetching, dispatch } = useContext(AuthContext);
 
   const validationSchema = yup.object({
     email: yup
@@ -27,9 +31,15 @@ export default function Register() {
       repassword: ""
     },
     validationSchema: validationSchema,
-    onSubmit: (values, { resetForm }) => {
+    onSubmit: async(values, { resetForm }) => {
+      const res =  await registerCall(
+        {username : values.username, email : values.email, password : values.password},
+        dispatch
+      )
       resetForm()
-      console.log("values", values)
+      if (res.authorized) {
+        navigate("/login")
+      }
     },
   });
   return (
@@ -52,7 +62,13 @@ export default function Register() {
               <p className="WarningParagraph">{formik.touched.password && formik.errors.password}</p>
               <input placeholder="Password Again" type='password' className="loginInput" name="repassword" onChange={formik.handleChange} />
               <p className="WarningParagraph">{formik.touched.repassword && formik.errors.repassword}</p>
-              <button className="loginButton" type="submit">Sign Up</button>
+              <button className="loginButton" type="submit">
+              {isFetching ? (
+                  "Loading....."
+                ) : (
+                  "Sign up"
+                )}
+              </button>
               <button className="loginRegisterButton" onClick={() => navigate("/login")}>
                 Log into Account
               </button>

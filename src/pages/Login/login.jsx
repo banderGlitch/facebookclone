@@ -50,7 +50,7 @@ export default function Login() {
         </div>
         <div className="loginRight">
           <form  onSubmit={formik.handleSubmit}>
-            <div className="loginBox">
+            <div className="loginBoxLogin">
               <input
                 placeholder="Email"
                 className="loginInput"
