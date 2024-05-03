@@ -1,4 +1,6 @@
 import { apiPost } from "./_services/_apiServices"
+import { apiGet } from "./_services/_apiServices";
+import { apiPut } from "./_services/_apiServices";
 import { toast } from "react-hot-toast";
 
 const BASE_URL = `http://localhost:3000/`
@@ -40,4 +42,67 @@ export const registerCall = async (userCredential, dispatch) => {
         throw err
     }
 
+}
+// Fetch user Api 
+export const usersApi  = async(id) => {
+    try {
+        const user = await apiGet(`${BASE_URL}api/users/?userId=${id}`)
+        return user
+    } catch (err) {
+        toast.error("Something went wrong!")
+        throw err
+    }
+}
+
+
+//  Feed Fetch Api calls
+export const fetchPost = async(userId) => {
+    try {
+        const Post = await apiGet(`${BASE_URL}api/post/${userId}`)
+        console.log("Post", Post)
+        return Post
+    } catch (err) {
+        toast.error("Error while fetching Feeds")
+        throw err
+    }
+}
+
+
+// Fetch timeline api 
+export const timelineApi = async(userId) => {
+    try {
+        const Post = await apiGet(`${BASE_URL}api/post/timeline/${userId}`)
+        console.log("Post", Post)
+        return Post
+    } catch (err) {
+        toast.error("Error while fetching Feeds")
+        throw err
+    }
+}
+
+// Fetch Profile api 
+
+export const profile_Details = async(username) => {
+    try {
+        const profileDetails = await apiGet(`${BASE_URL}api/post/profile/${username}`)
+        console.log("profileDetails", profileDetails)
+        return profileDetails
+    } catch (err) {
+        toast.error("Error while fetching Profile")
+        throw err
+    }
+}
+
+// Like Profile Api is defined here! we have
+
+export const like_counter = async(post_id) => {
+    try {
+        const like_count = await apiPut(`${BASE_URL}api/post/${post_id}/like`)
+        return like_count
+
+
+    } catch (err) {
+        toast.error("Error while getting likes api sorry")
+        throw err
+    }
 }

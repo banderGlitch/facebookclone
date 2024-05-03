@@ -22,9 +22,12 @@ const ProtectedRoutes = ({ user }) => {
 
   return (
     <Suspense fallback={
-      <div className='loading-loader-section'>
-        <CircularProgress color='success' />
+      <div>
+        <p>Loading...</p>
       </div>
+      // <div className='loading-loader-section'>
+      //   <CircularProgress color='success' />
+      // </div>
     }>
       <Outlet />
     </Suspense>
@@ -42,9 +45,12 @@ const Un_Protected_Routes = ({ user }) => {
 
   return (
     <Suspense fallback={
-      <div className='loading-loader-section'>
-        <CircularProgress color='success' />
+      <div>
+        <p>Loading...</p>
       </div>
+      // <div className='loading-loader-section'>
+      //   <CircularProgress color='success' />
+      // </div>
     }>
       <Outlet />
     </Suspense>
@@ -61,7 +67,7 @@ function App() {
       <Router>
         <Routes>
           <Route element = {<Un_Protected_Routes user = {user}/>}>
-            <Route path='/login' element={<Login />} />
+            <Route path='/' element={<Login />} />
             <Route path='/register' element={<Register />} />
           </Route>
           <Route element={<ProtectedRoutes user = {user}/>}>
@@ -73,9 +79,12 @@ function App() {
             element={
               <>
                 <Suspense fallback={
-                  <div className='loading-loader-section'>
-                    <CircularProgress color="success" />
+                  <div>
+                    <p>Loading...</p>
                   </div>
+                  // <div className='loading-loader-section'>
+                  //   <CircularProgress color="success" />
+                  // </div>
                 }
                 />
                 <NotFound />
