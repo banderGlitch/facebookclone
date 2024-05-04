@@ -24,8 +24,8 @@ export default function Post({post}) {
         setIsLiked(post.likes.includes(currentUser._id))
     },[currentUser._id, post.likes])
 
-    const likeHandler = async (id) => {
-        await like_counter(id)
+    const likeHandler = async (id, user_id) => {
+        await like_counter(id, user_id)
         setLike(isLiked ? like-1 : like+1)
         setIsLiked(!isLiked)
     }
@@ -62,8 +62,8 @@ export default function Post({post}) {
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
-                        <img className='likeIcon' src={Like} onClick={() => likeHandler(post._id)} alt='Not Found'/>
-                        <img className='heartIcon' src={Heart} onClick={() => likeHandler(post._id)} alt='Not Found'/>
+                        <img className='likeIcon' src={Like} onClick={() => likeHandler(post._id, currentUser._id)} alt='Not Found'/>
+                        <img className='heartIcon' src={Heart} onClick={() => likeHandler(post._id, currentUser._id)} alt='Not Found'/>
                         <span className='likeCounter'>{`${like} Likes`}</span>
                     </div>
                     <div className='postBottomRight'>

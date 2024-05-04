@@ -46,7 +46,9 @@ export const registerCall = async (userCredential, dispatch) => {
 // Fetch user Api 
 export const usersApi  = async(id) => {
     try {
-        const user = await apiGet(`${BASE_URL}api/users/?userId=${id}`)
+        const user = await apiGet(`${BASE_URL}api/users/?userId=${id},{ 
+
+        }`)
         return user
     } catch (err) {
         toast.error("Something went wrong!")
@@ -95,11 +97,12 @@ export const profile_Details = async(username) => {
 
 // Like Profile Api is defined here! we have
 
-export const like_counter = async(post_id) => {
+export const like_counter = async(post_id,  user_id) => {
     try {
-        const like_count = await apiPut(`${BASE_URL}api/post/${post_id}/like`)
+        const like_count = await apiPut(`${BASE_URL}api/post/${post_id}/like` ,{
+            userId : user_id
+        })
         return like_count
-
 
     } catch (err) {
         toast.error("Error while getting likes api sorry")
